@@ -1,0 +1,30 @@
+.edit-form
+    min-width: 320px
+    background-color: rgba(15,70,55,1)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate( -50%, -50%)
+    z-index: 10
+    padding: 1rem
+    text-align: center
+    border-radius: 1rem
+    .form input[type="submit"]
+        margin: auto
+.close-btn
+    color: $text-color
+    font-weight: 700
+    height: 1.5rem
+    width: 1.5rem
+    line-height: 1rem
+    border: solid $text-color 2px
+    border-radius: 50%
+    cursor: pointer
+    position: absolute
+    top: -0.5rem
+    right: -0.5rem
+@media only screen and (max-width: 800px)
+    .edit-form
+        min-width: 90vw
+        max-width: 90vw
+        padding: 0

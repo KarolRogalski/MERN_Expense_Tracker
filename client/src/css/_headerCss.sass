@@ -1,0 +1,41 @@
+#header 
+    height: 50px
+    display: flex
+    // background: linear-gradient(rgba(40, 40, 140,0.7), rgba(9, 9, 20, 0.6))
+    align-items: center
+    justify-content: space-between
+
+
+#header .title 
+    // display: none
+    padding: 0 4rem 0 0.8rem
+    line-height: 50px
+    height: 50px
+    width: max-content
+    min-width: 33%
+    color: #913dff
+    color: darken($hover-color, 15)
+    color: $text-color
+    background: darken($base-color, 15)
+    clip-path: polygon(0 0, 100% 0, 83% 100%, 0% 100%)
+
+
+
+#header .auth-options 
+    height: 100%
+
+
+#header .auth-options button 
+    background: linear-gradient(rgba(70, 70, 190,0.7), rgba(20, 20, 20, 0.6))
+    background: darken($base-color, 25)
+    padding: 0.8rem
+    color: $text-color
+    border: unset
+    margin: 1rem
+    transition: all 300ms ease-in-out
+    border-radius: 0.5rem
+
+
+#header .auth-options button:hover 
+    background: darken($base-color, 15)
+    color: $text-color

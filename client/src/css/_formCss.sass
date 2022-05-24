@@ -1,0 +1,61 @@
+
+.form
+    position: relative
+
+.form label,
+form input
+    display: block
+
+.form input
+    margin-bottom: 1rem
+
+.form label
+    margin-bottom: 0.2rem
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+select
+    width: 100%
+    padding: 0.3rem
+    font-size: 1.1rem
+    border: solid 1px #c2c2c2
+    background: none
+    border-radius: 8px
+    color: $text-color
+option
+    color: $text-color-dark
+
+form input:focus,
+    outline: none
+    border: 1px solid rgb(145, 61, 255)
+    box-shadow: inset 0px 0px 15px rgba(157, 87, 248, 0.5)
+
+.form input[type="submit"]
+    border: 1px solid #913dff
+    background: $base-color
+    padding: 0.5rem
+    border-radius: 0.5rem
+    color: $text-color
+    font-size: 1.1rem
+
+select:hover
+    outline: none
+    border: 1px solid rgb(145, 61, 255)
+    box-shadow: inset 0px 0px 15px rgba(157, 87, 248, 0.5)
+option
+    background: #090914
+    color: $text-color
+    border: 1px solid rgb(145, 61, 255)
+    box-shadow: inset 0px 0px 15px rgba(157, 87, 248, 0.5)
+    &:hover
+        border: 1px solid rgb(145, 61, 255)
+        box-shadow: inset 0px 0px 15px rgba(157, 87, 248, 0.5)
+
+@media only screen and (max-width: 800px)
+    .form
+        max-width: 90%
+        margin: auto
+    .form input[type="submit"]
+        margin: 1rem auto

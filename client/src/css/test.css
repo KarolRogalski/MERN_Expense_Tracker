@@ -1,0 +1,6 @@
+.right-panel {
+  grid-area: "list";
+}
+.left-panel {
+  grid-area: "one";
+}

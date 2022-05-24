@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap")
+@import _vars
+@import headerCss
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+ul
+    margin-left: 1.5rem
+    list-style: none
+
+button,
+input[type="submit"]
+    border: none
+    background: none
+    color: none
+    cursor: pointer
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol
+    margin: 1em 0
+    color: $text-color
+body
+    font-family: "Roboto", sans-serif
+    background: $base-color
+    background: linear-gradient(rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.6)), url(../img/bg_blu_hex.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 100vh
+
+.container_app
+    min-height: calc(100vh - 80px)
+    // max-width: 860px
+    // margin: 0 auto
+.modal-bg
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: rgba(15,70,55,0.65)
+    z-index: 5
+
+@import formCss
+@import etCss
+@import searchCss
+@import errorsCss
+@import animationCss
+@import signUpandIn
+@import editForm
