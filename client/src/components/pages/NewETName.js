@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
-import { GlobalContext } from "../../context/GlobalState";
-import { useHistory } from "react-router-dom";
-import ErrorNotice from "../misc/ErrorNotice";
+import React, { useState, useContext, useEffect } from 'react'
+import { GlobalContext } from '../../context/GlobalState'
+import { useNavigate } from 'react-router-dom'
+import ErrorNotice from '../misc/ErrorNotice'
 
 export default function NewETName() {
-  const [newName, setNewETName] = useState("");
-  const [errorMsg, setError] = useState();
+  const [newName, setNewETName] = useState('')
+  const [errorMsg, setError] = useState()
   const {
     token,
     user_id,
@@ -16,48 +16,48 @@ export default function NewETName() {
     displayName,
     expens_tracker_names,
     transactions,
-  } = useContext(GlobalContext);
+  } = useContext(GlobalContext)
 
-  const history = useHistory();
+  const navigate = useNavigate()
 
   const submit = (e) => {
-    e.preventDefault();
-    newAlbumName(newName);
-    setNewETName("");
-  };
+    e.preventDefault()
+    newAlbumName(newName)
+    setNewETName('')
+  }
 
   const deleteAlbumClick = (name) => {
-    deleteAlbum(name);
-  };
+    deleteAlbum(name)
+  }
 
   useEffect(() => {
-    if (error) setError(error);
-    if (!user_id && localStorage.getItem("auth-token")) history.push("/");
-    if (!token) history.push("/");
-  }, [expens_tracker_names, error]);
+    if (error) setError(error)
+    if (!user_id && localStorage.getItem('auth-token')) navigate('/')
+    if (!token) navigate('/')
+  }, [expens_tracker_names, error])
 
   const selectAlbum = (name) => {
-console.log(name);
-  };
+    console.log(name)
+  }
 
   const totalBalance = (name) => {
     const amounts = transactions
       .filter((transaction) => transaction.album_name === name)
-      .map((transaction) => transaction.amount);
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    const sign = total < 0 ? "-" : "+";
-    return `${sign}£${Math.abs(total)}`;
-  };
+      .map((transaction) => transaction.amount)
+    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
+    const sign = total < 0 ? '-' : '+'
+    return `${sign}£${Math.abs(total)}`
+  }
   const totalBalanceNumber = (name) => {
     const amounts = transactions
       .filter((transaction) => transaction.album_name === name)
-      .map((transaction) => transaction.amount);
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-    return total;
-  };
+      .map((transaction) => transaction.amount)
+    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2)
+    return total
+  }
 
   return (
-    <div className="page">
+    <div className='page'>
       <h1>{displayName}</h1>
       <h1>Welcome to your Expense Tracker</h1>
 
@@ -65,40 +65,40 @@ console.log(name);
         <ErrorNotice
           message={error}
           clearError={() => {
-            removeError();
-            setError(undefined);
+            removeError()
+            setError(undefined)
           }}
         />
       )}
-      <form id="new_expense_tracker_name" className="form" onSubmit={submit}>
+      <form id='new_expense_tracker_name' className='form' onSubmit={submit}>
         <label>
           please enter new expense tracker name (for exsample YEAR 21/22)
         </label>
         <input
           value={newName}
-          id="new_expense_tracker"
-          type="text"
+          id='new_expense_tracker'
+          type='text'
           onChange={(e) => setNewETName(e.target.value)}
         />
 
-        <input type="submit" value="submit" />
+        <input type='submit' value='submit' />
       </form>
       <p>yours albums:</p>
-      <ul className="list">
+      <ul className='list'>
         {expens_tracker_names.map((album, index) => (
           <li key={index} onClick={() => selectAlbum(album)}>
-            {album}{" "}
+            {album}{' '}
             <span
               className={
                 totalBalanceNumber(album) < 0
-                  ? "album_list_balance minus"
-                  : "album_list_balance plus"
+                  ? 'album_list_balance minus'
+                  : 'album_list_balance plus'
               }
             >
               {totalBalance(album)}
             </span>
             <button
-              className="delete-btn"
+              className='delete-btn'
               onClick={() => deleteAlbumClick(album)}
             >
               x
@@ -107,5 +107,5 @@ console.log(name);
         ))}
       </ul>
     </div>
-  );
+  )
 }

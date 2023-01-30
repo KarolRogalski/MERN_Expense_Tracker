@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Header from "./components/layout/Header";
-import Home from "./components/pages/Home";
-import NewETName from "./components/pages/NewETName";
-import { GlobalProvider } from "./context/GlobalState";
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from './components/layout/Header'
+import Home from './components/pages/Home'
+import NewETName from './components/pages/NewETName'
+import { GlobalProvider } from './context/GlobalState'
 // import "./style.css";
 // import "./signInUp.css";
-import "./css/main.css";
+import './css/main.css'
 
 export default function App() {
   return (
@@ -14,14 +14,14 @@ export default function App() {
       <BrowserRouter>
         <GlobalProvider>
           <Header />
-          <div className="container_app">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/addnewet" component={NewETName} />
-            </Switch>
+          <div className='container_app'>
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path='/addnewet' element={<NewETName />} />
+            </Routes>
           </div>
         </GlobalProvider>
       </BrowserRouter>
     </>
-  );
+  )
 }
