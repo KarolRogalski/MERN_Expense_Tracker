@@ -15,7 +15,7 @@ export const Balance = () => {
     <>
       <h4>Your Balance</h4>
       <h1>
-        {sign}${numberWithCommas(Math.abs(total))}
+        {sign}£{numberWithCommas(Math.abs(total))}
       </h1>
     </>
   );
