@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "build": "npm install && npm install --prefix ./client/ && CI=false npm run build --prefix ./client/",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
