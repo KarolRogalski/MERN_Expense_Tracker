@@ -94,7 +94,7 @@ body {
 }
 
 .container_app {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 50px - 2rem);
 }
 
 .modal-bg {
@@ -191,7 +191,7 @@ option:hover {
 }
 
 .ETcontainer {
-  margin: 30px auto;
+  margin: 2rem auto;
   width: 350px;
 }
 
@@ -265,7 +265,7 @@ option:hover {
 .list {
   list-style-type: none;
   padding: 0;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
@@ -426,7 +426,7 @@ option:hover {
     overflow: hidden;
   }
   .list {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-height: 75vh;
     display: -webkit-box;
     display: -ms-flexbox;

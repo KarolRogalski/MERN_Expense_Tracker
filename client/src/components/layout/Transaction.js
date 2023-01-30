@@ -17,7 +17,7 @@ export const Transaction = ({ transaction }) => {
       </span>
 
       <span>
-        {sign}${numberWithCommas(Math.abs(transaction.amount))}
+        {sign}£{numberWithCommas(Math.abs(transaction.amount))}
       </span>
       <button
         className='delete-btn'
